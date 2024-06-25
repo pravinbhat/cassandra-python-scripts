@@ -33,7 +33,7 @@ def loadData(pathToDSBulk, host, port, username, password, ks, table, truststore
               --datastax-java-driver.advanced.ssl-engine-factory.truststore-password {truststore_password} \
               --datastax-java-driver.advanced.ssl-engine-factory.hostname-validation false \
               --driver.advanced.auth-provider.class DsePlainTextAuthProvider \
-              -url {output_json_file_path} """
+              -cl LOCAL_QUORUM -url {output_json_file_path} """
               .format(host=host, port=port, username=username, password=password, ks=ks, table=table, 
                       truststore_path=truststore_path, truststore_password=truststore_password, 
                        output_json_file_path=output_json_file_path))

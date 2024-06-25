@@ -27,7 +27,7 @@ def loadData(pathToDSBulk, scb, username, password, ks, table, output_json_file_
               -p {password} \
               -query 'insert into {ks}.{table} (row_id, attributes_blob, body_blob, metadata_s, \\\"vector\\\") \
               values (:row_id, :attributes_blob, :body_blob, :metadata_s, :\\\"vector\\\")' \
-              -url {output_json_file_path} """
+              -cl LOCAL_QUORUM -url {output_json_file_path} """
               .format(scb=scb, username=username, password=password, ks=ks, table=table, 
                        output_json_file_path=output_json_file_path))
 
